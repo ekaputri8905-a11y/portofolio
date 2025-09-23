@@ -18,8 +18,8 @@
             --primary: #916e8f;
             --secondary: #87709b;
             --accent: #8338ec;
-            --bg-dark: #0a0a0a;
-            --bg-darker: #050505;
+            --bg-dark: #000000;
+            --bg-darker: #000000;
             --text-light: #ffffff;
             --text-gray: #a0a0a0;
             --gradient: linear-gradient(135deg, #570c5e, #79386b, #684560);
@@ -365,28 +365,29 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .project-card {
             background: rgba(255, 255, 255, 0.02);
-            border-radius: 15px;
+            border-radius: 16px;
             border: 1px solid rgba(225, 0, 255, 0.1);
             overflow: hidden;
             transition: all 0.3s ease;
-            height: auto;
-            width: 350px;
+            position:relative;
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(225, 0, 255, 0.1);
             border-color: rgba(132, 0, 255, 0.3);
         }
 
         .project-image {
-            height: 200px;
+            width:100%;
+            height: 240px;
             background: linear-gradient(135deg, var(--accent), var(--primary));
             display: flex;
             align-items: center;
@@ -395,8 +396,29 @@
             color: white;
         }
 
+        .project-image img {
+            width: 100%;
+            height:100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover  .project-imge img{
+            transform: scale(1.05);
+        }
+
+        .project-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #6b7280;
+        }
+
         .project-content {
-            padding: 2rem;
+            padding: 28px;
         
         }
 
@@ -415,24 +437,78 @@
         .project-tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
+            gap: 8px;
+            margin-bottom: 24px;
         }
 
         .tech-tag {
             background: rgba(255, 0, 110, 0.1);
             color: var(--secondary);
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
+            padding: 6px 12px;
+            border-radius: 20px;
             font-size: 0.8rem;
+            font-weight: 500;
             border: 1px solid rgba(255, 0, 110, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .teach-tag:hover{
+            background:rgba(139,92,246,0.2);
+            border-color:rgba(139,92,246,0.3);
+
         }
 
         .project-links {
             display: flex;
-            gap: 1rem;
+            gap: 12px;
         }
 
+        .project-link {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-align: center;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .primary-link {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            color: white;
+        }
+
+        .primary-link:hover {
+            background: linear-gradient(135deg, #7c3aed, #db2777);
+            transform: translateY(-1px);
+        }
+
+        .project-category {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .secondary-link {
+            background: transparent;
+            color: #9ca3af;
+            border-color: #374151;
+        }
+
+        .secondary-link:hover {
+            color: white;
+            border-color: #4b5563;
+            background: #1f2937;
+        }
         .project-links a {
             color: var(--primary);
             text-decoration: none;
@@ -660,45 +736,94 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section class="projects-section" id="projects">
         <div class="section-title">
-            <h2>Portfolio Projects</h2>
-            <p>Beberapa project yang telah saya kerjakan</p>
+            <h2 class="section-title">Portfolio Projects</h2>
+            <p class="section-subtitle">Beberapa project yang telah saya kerjakan</p>
         </div>
+
         <div class="projects-grid">
             <div class="project-card">
-                <div class="c:\Users\USER\Downloads\Klinik Pratama Rawat Inap (1).png"></div>
-                <body>
-                <img src="c:\Users\USER\Documents\TUGAS MAGANG\Klinik Pratama Rawat Inap (1).png" alt="png" width="350px">
-                <div class="project-content">
-                    <h3>Desain Pamflet</h3>
-                    <p>Berisi Layanan yang ada di Klinik BTN Medical Center.</p>
+                <div class="project-image">
+                    <img src="c:\Users\USER\Documents\TUGAS MAGANG\Klinik Pratama Rawat Inap (1).png" alt="pamflet">
+                    <div class="project-category">Pamflet</div>
                 </div>
-                </body>
-            </div>
-            <div class="project-card">
-                <div class="c:\Users\USER\Downloads\Screenshot 2025-09-15 084833.png"></div>
-                <body>
-                 <img src="c:\Users\USER\Downloads\Screenshot 2025-09-16 104546.png" alt="png" width="350px;">
                 <div class="project-content">
-                    <h3>Surat Keluar</h3>
-                    <p>Surat Undangan Rapat Kerja Klinik BTN Medical Center.</p>
-                </div>   
-            </body>
+                    <h3 class="project-title">Klinik BTN Medical Center</h3>
+                    <p class="project-description">
+                        Informasi tentang Layanan yang ada di Klinik BTN Medical Center
+                    </p>
+                </div>
             </div>
+
             <div class="project-card">
-                <div class="c:\Users\USER\Downloads\Untitled design (1).png"></div>
-                <body>
-                <img src="c:\Users\USER\Documents\TUGAS MAGANG\Untitled design (1).png" alt="png" width="350px;">
+                <div class="project-image">
+                    <img src="c:\Users\USER\Documents\TUGAS MAGANG\Totebag.png" alt="totebag">
+                    <div class="project-category">Produk</div>
+                </div>
                 <div class="project-content">
-                    <h3>Desain Kemasan Produk</h3>
-                    <p>Desain Totebag untuk Klinik BTN Medical</p>
-                </body>
-                    </div>
+                    <h3 class="project-title">Desain Produk</h3>
+                    <p class="project-description">
+                        Desain Produk Totebag Klinik BTN Medical Center
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="c:\Users\USER\Downloads\Screenshot 2025-09-19 172635.png" alt="logo">
+                    <div class="project-category">Logo</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Desain Logo Produk</h3>
+                    <p class="project-description">
+                        Hasil desain logo suatu produk
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="c:\Users\USER\Downloads\Screenshot 2025-09-19 172420.png" alt="surat keluar">
+                    <div class="project-category">Surat</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Surat keluar</h3>
+                    <p class="project-description">
+                       Surat undangan rapat kerja Klinik BTN Medical Center.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="c:\Users\USER\Downloads\Screenshot 2025-09-19 152715.png" alt="topologi">
+                    <div class="project-category">Topologi</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Topologi Jaringan</h3>
+                    <p class="project-description">
+                        Contoh Topologi Jaringan yang ada di lab komputer sekolah
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="c:\Users\USER\Downloads\Screenshot 2025-09-22 073943.png" alt="feed ig">
+                    <div class="project-category">Feed Ig</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Feed Instagram</h3>
+                    <p class="project-description">
+                        Postingan Instagram Peserta magang SMK tahun 2025 di Klinik BTN Medical Center
+                    </p>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- Contact Section -->
     <section id="contact">
